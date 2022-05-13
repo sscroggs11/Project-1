@@ -21,7 +21,7 @@ function getWikiApi(cityName) {                         //Takes the city name an
       .then(function (response) {
         if (response.status < 200 || response.status >= 400) {                  //Check Status - if not in 300 range, return error message.
           wikiText.textContent = "Response Error Code: " + response.status;     //Todo - See if API returns any status messages, append if provided.
-        }
+        }                                                                       //Todo - If no data available, "summary not available" message instead.
         return response.json();
       })
       .then(function (data) {
