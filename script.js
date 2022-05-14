@@ -1,13 +1,14 @@
 var placeSearch, autocomplete, geocoder;
 
-function initAutocomplete() {
+
+document.observe("dom:loaded",function initAutocomplete() {
   geocoder = new google.maps.Geocoder();
   autocomplete = new google.maps.places.Autocomplete(
     (document.getElementById('autocomplete')), {
       types: ['geocode']
     });
   autocomplete.addListener('place_changed', fillInAddress);
-}
+})
 
 function codeAddress(address) {
   geocoder.geocode({
