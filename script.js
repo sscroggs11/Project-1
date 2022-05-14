@@ -4,9 +4,10 @@ function initAutocomplete() {
   geocoder = new google.maps.Geocoder();
   autocomplete = new google.maps.places.Autocomplete(
     (document.getElementById('autocomplete')), {
-      types: ['geocode']
+      types: ['geocode'];
+    }).catch(e => {
+      console.log(e);
     });
-
   autocomplete.addListener('place_changed', fillInAddress);
 }
 
