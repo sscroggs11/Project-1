@@ -25,6 +25,7 @@ function initAutocomplete() {
 
 function fillInAddress() {
   var place = autocomplete.getPlace();
+  console.log(place)  
 
   codeAddress(document.getElementById('autocomplete').value);
 }
