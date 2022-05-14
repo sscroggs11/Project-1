@@ -1,4 +1,4 @@
-ar placeSearch, autocomplete, geocoder;
+var placeSearch, autocomplete, geocoder;
 
 function initAutocomplete() {
   geocoder = new google.maps.Geocoder();
