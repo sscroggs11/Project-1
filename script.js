@@ -1,12 +1,30 @@
- google.maps.event.addDomListener(window, 'load', function () {
-            var places = new google.maps.places.Autocomplete(document.getElementById('txtPlaces'));
-            google.maps.event.addListener(places, 'place_changed', function () {
-                var place = places.getPlace();
-                var address = place.formatted_address;
-                var latitude = place.geometry.location.A;
-                var longitude = place.geometry.location.F;
-                var mesg = "Address: " + address;
-                mesg += "\nLatitude: " + latitude;
-                mesg += "\nLongitude: " + longitude;
-                alert(mesg);
-            });
+ar placeSearch, autocomplete, geocoder;
+
+function initAutocomplete() {
+  geocoder = new google.maps.Geocoder();
+  autocomplete = new google.maps.places.Autocomplete(
+    (document.getElementById('autocomplete')), {
+      types: ['geocode']
+    });
+
+  autocomplete.addListener('place_changed', fillInAddress);
+}
+
+function codeAddress(address) {
+  geocoder.geocode({
+    'address': address
+  }, function(results, status) {
+    if (status == 'OK') {
+      // This is the lat and lng results[0].geometry.location
+      alert(results[0].geometry.location);
+    } else {
+      alert('Geocode was not successful for the following reason: ' + status);
+    }
+  });
+}
+
+function fillInAddress() {
+  var place = autocomplete.getPlace();
+
+  codeAddress(document.getElementById('autocomplete').value);
+}
