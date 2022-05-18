@@ -28,16 +28,15 @@ h1 {
 }
 #IMGSEA{
     display: inline;
-    height: 80px;
-    width: 100%;
-    
-
-
+    height: 250px;
+    width: max-content;
 }
 #InputBox{
     display: flex;
-    justify-content: end;
+    /* justify-content: end; */
     border-bottom: 5px lightblue solid;
+    margin:0 auto;
+    display:inline-block;
 }
 
 input{
@@ -47,4 +46,25 @@ input{
 }
 #search-button{
     width: 100px;
+}
+.parent{
+    width:100%;
+ border: 5px black solid;
+ height: 500px;
+}
+.leftchild{
+    width:50%;
+    border: 5px black solid;
+    height: 100%;
+}
+.rightchild{
+    width:100%;
+    border: 5px black solid;
+    height: 100%;
+}
+.controls{
+
+}
+#showimage{
+    
 }
