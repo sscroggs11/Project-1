@@ -1,6 +1,5 @@
 /* Fetch API */
-
-var cityName=""; //get from input
+var cityName="seattle"; //get from input
 var clientID= "nkyJu8Y-bgOpyEvKdevXhji09H6_azi1OlFzFM9W0-Y";
 
 window.addEventListener('load', loadImage(cityName));
@@ -8,16 +7,13 @@ window.addEventListener('load', loadImage(cityName));
 function loadImage(cityName) {
   var cityUrl = "https://api.unsplash.com/search/photos?query=" + cityName + "&page=1&per_page=1&client_id=" + clientID;
   console.log(cityUrl);
-  var imageEl = document.querySelector('.image');
     fetch(cityUrl)
         .then(function (response){
             return response.json();
         })
         .then(function(data) {
-            console.log(data);
-            var imageElement=document.createElement('img');
+            var imageElement = document.querySelector('#showimage');
             imageElement.src=data.results[0].urls.thumb;
-            imageEl.append(imageElement);
         });
 
 }
