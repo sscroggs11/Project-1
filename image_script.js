@@ -1,8 +1,9 @@
 /* Fetch API */
 
+var cityName= document.getElementById("pac-input").value; //get from input
 var clientID= "nkyJu8Y-bgOpyEvKdevXhji09H6_azi1OlFzFM9W0-Y";
-var cityName = document.getElementsByTagName("input")[0].value;
 window.addEventListener('load', loadImage(cityName));
+
 
 function loadImage(cityName) {
   var cityUrl = "https://api.unsplash.com/search/photos?query=" + cityName + "&page=1&per_page=1&client_id=" + clientID;
@@ -17,12 +18,13 @@ function loadImage(cityName) {
         });
 
 }
+if (e.key === "Enter"){
+    loadImage(cityName)
+}
+
 document.getElementByID("search-button").addEventListener("click",func);
 
 function func() {
     console.log(document.getElementById("pac-input").value);
 }
 
-//"https://api.unsplash.com/search/photos?query=seattle&per_page=1&client_id=nkyJu8Y-bgOpyEvKdevXhji09H6_azi1OlFzFM9W0-Y
-
-//"https://api.unsplash.com/search/photos?query=coffee&per_page=20&client_id=nkyJu8Y-bgOpyEvKdevXhji09H6_azi1OlFzFM9W0-Y"
