@@ -18,9 +18,7 @@ function loadImage(cityName) {
         });
 
 }
-if (e.key === "Enter"){
-    loadImage(cityName)
-}
+
 
 document.getElementByID("search-button").addEventListener("click",func);
 
