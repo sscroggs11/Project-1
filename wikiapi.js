@@ -1,6 +1,6 @@
 // wikiapi.js, created by Adam Parent, 10 May 2022.
 
-var cityName =document.getElementsByTagName("input")[0].value;  //To be pulled from either input or Sam's API after validation - should be pre-trimmed
+var cityName =document.getElementById("pac-input").value;  //To be pulled from either input or Sam's API after validation - should be pre-trimmed
 const wikiUsername = "arparent";  //Required for API - registered username for Adam Parent.
 var cityNameText = document.getElementById('city-name-text');       //Todo - Create this element in HTML.
 var wikiText = document.getElementById('wiki-text');                //Todo - Create this element in HTML.
