@@ -20,7 +20,7 @@ function loadImage(cityName) {
 }
 
 
-document.getElementByID("search-button").addEventListener("click",func);
+document.getElementById("search-button").addEventListener("click",func);
 
 function func() {
     console.log(document.getElementById("pac-input").value);
