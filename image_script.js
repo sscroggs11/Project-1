@@ -1,5 +1,4 @@
 /* Fetch API */
-
 var cityName= document.getElementById("pac-input").value; //get from input
 var clientID= "nkyJu8Y-bgOpyEvKdevXhji09H6_azi1OlFzFM9W0-Y";
 window.addEventListener('load', loadImage(cityName));
@@ -24,5 +23,12 @@ document.getElementById("search-button").addEventListener("click",func);
 
 function func() {
     console.log(document.getElementById("pac-input").value);
+    loadImage(cityName);
 }
+
+
+
+//"https://api.unsplash.com/search/photos?query=seattle&per_page=1&client_id=nkyJu8Y-bgOpyEvKdevXhji09H6_azi1OlFzFM9W0-Y
+
+//"https://api.unsplash.com/search/photos?query=coffee&per_page=20&client_id=nkyJu8Y-bgOpyEvKdevXhji09H6_azi1OlFzFM9W0-Y"
 
