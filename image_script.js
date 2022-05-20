@@ -1,7 +1,7 @@
 /* Fetch API */
 
 var clientID= "nkyJu8Y-bgOpyEvKdevXhji09H6_azi1OlFzFM9W0-Y";
-var cityName = place.name;
+var cityName = document.getElementsByTagName("input")[0].value;
 window.addEventListener('load', loadImage(cityName));
 
 function loadImage(cityName) {
@@ -16,6 +16,11 @@ function loadImage(cityName) {
             imageElement.src=data.results[0].urls.thumb;
         });
 
+}
+document.getElementByID("search-button").addEventListener("click",func);
+
+function func() {
+    console.log(document.getElementById("pac-input").value);
 }
 
 //"https://api.unsplash.com/search/photos?query=seattle&per_page=1&client_id=nkyJu8Y-bgOpyEvKdevXhji09H6_azi1OlFzFM9W0-Y
