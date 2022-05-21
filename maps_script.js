@@ -82,7 +82,7 @@ function initAutocomplete() {
     cityName=document.getElementById("pac-input").value;
     prepCityNameforURL();
     searchWikipedia();
-    loadImage("cityName");
+    loadImage();
       }
 
 
