@@ -53,7 +53,7 @@ input{
 .parent{
     width:100%;
  border: 5px black solid;
- height: 500px;
+ height: 100%;
 }
 .leftchild{
     width:50%;
