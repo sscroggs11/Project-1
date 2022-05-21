@@ -83,20 +83,10 @@ function initAutocomplete() {
     prepCityNameforURL();
     searchWikipedia();
     loadImage();
-    markers.push(
-      new google.maps.Marker({
-        map,
-        icon,
-        title: place.name,
-        position: place.geometry.location,
-      })
-    ); 
-    }
+      }
+
 
   
 
-
-  loadImage();
-  console.log(document.getElementById("pac-input").value);
 
 
