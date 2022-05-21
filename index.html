@@ -1,34 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>  
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-        <!--<link
-        rel="stylesheet"
-        href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        />
-        <link 
-        rel="stylesheet" 
-        href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
-        <link
-        rel="stylesheet"
-        href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
-        crossorigin="anonymous"
-        />
-        <link
-        href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
-        rel="stylesheet"
-        />
-        <link rel="stylesheet" href="style.css" />-->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets2/Style.css">
 
+</head>
+<body>
+    <header>
+        <nav class="nav">
+            <h1>City Scan</h1>
+        </nav>
+    </header> 
+    <div class=headerPic>
+         <img id="IMGSEA" src="https://images.squarespace-cdn.com/content/v1/5c2d06bd8f51304e8d79dfa0/1552854565809-S5SA1QF5VU3NGJ6NWRZP/Seattle+Skyline.jpg?format=2500w" alt="Map of Seattle" class=".img-fluid">
+    </div>    
+    <div id="InputBox" class="col">
+        <!-- <div class="pac-card" id="pac-card"> -->
+            <input type="search" placeholder="Search" id="pac-input">
+                    <button type="submit"
+                        id="search-button">Search</button>
+            </input>      
+        </div>
+    <div class="parent">
+        <div class="row">
+            <div class="col" id="left-child">
+                <h3 id="city-name-text">
+                </h3>
+                <p id="wiki-text">
+                </p> 
+                <div id="last-city">
+                </div>    
+            </div>
+            <div class="col" >
+                <section>
+                    <image class=".img-fluid" id="showimage"></image>
+                </section>
+            </div>
+        </div>
+    </div>
+    <div id="map" ></div>         
+    </div>
+    <script src="./wikiapi.js"></script>
+    <script src="./image_script.js"></script>
+    <script src="./maps_script.js"></script>
+    <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBj60xSlwjTCulTpFV4vzN_dU2Aq32B308&callback=initAutocomplete&libraries=places&v=weekly">
+    </script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>        
 
-    </head>
-
-    <body>
-        <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script src="script.js"></script>-->
-    </body>
+   
+</body>
 </html>

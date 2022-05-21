@@ -5,6 +5,7 @@ var cityNameURL = "";
 var cityNameText = document.getElementById('city-name-text');
 var wikiText = document.getElementById('wiki-text');
 var leftChild = document.getElementById('left-child');
+var lastCityText = document.getElementById('last-city');
 
 //This function takes the city name, parses out the spaces and formats it for use in a URL
 function prepCityNameforURL(){
@@ -35,9 +36,8 @@ async function searchWikipedia() {
   wikiText.append(wikiLink);                                //Create and append a link to the wiki article
   var lastCity = localStorage.getItem("lastCity");
   if(lastCity != json.geonames[0].title){                   //Compare current city to last searched in local storage, if different display last city
-    var lastCityText = document.createElement("div");
     lastCityText.textContent = "Last city searched: " + lastCity;
-    leftChild.append(lastCityText);
   }
   localStorage.setItem("lastCity", json.geonames[0].title); //Update last city
 }
+
