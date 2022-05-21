@@ -78,4 +78,8 @@ img #showimage{
     height:500px;
     width:100%
 }
+@media only screen and (max-width: 600px){
+ img #showimage{
+     max-width:500px;
+    }
 
