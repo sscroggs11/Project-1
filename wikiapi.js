@@ -1,43 +1,35 @@
 // wikiapi.js, created by Adam Parent, 10 May 2022.
 
-var cityName =document.getElementById("pac-input").value;  //To be pulled from either input or Sam's API after validation - should be pre-trimmed
-const wikiUsername = "arparent";  //Required for API - registered username for Adam Parent.
-var cityNameText = document.getElementById('city-name-text');       //Todo - Create this element in HTML.
-var wikiText = document.getElementById('wiki-text');                //Todo - Create this element in HTML.
+var cityName = "";
+var cityNameURL = "";
+var cityNameText = document.getElementById('city-name-text');
+var wikiText = document.getElementById('wiki-text');
 
-function getWikiApi(cityName) {                         //Takes the city name and returns a matching summary from Wikipedia.
-    cityNameText.textContent = cityName;                //Display the city name on the page without alteration.
-    cityNameArr = cityName.split(" ");                  //Parse out any spaces in the city name - they cannot be in the URL.
-    var wikiCityName = "";                                   //Creates a string for city name in the URL.
-    for (var i = 0; i < cityNameArr.length; i++){       //Re-assembles the city name string, replacing spaces with "%20".
-        wikiCityName = wikiCityName.concat(cityNameArr[i]);
-        if((i + 1) < cityNameArr.length)
-            wikiCityName = wikiCityName.concat("%20");
-        else
-            break;
+function prepCityNameforURL(){
+  cityNameArr = cityName.split(" ");
+  cityNameURL = "";
+  for(var i = 0; i < cityNameArr.length; i++){
+    cityNameURL = cityNameURL.concat(cityNameArr[i]);
+    if((i + 1) < cityNameArr.length){
+      cityNameURL = cityNameURL.concat("%20");
     }
-    var wikiApiURL = "https://secure.geonames.org/wikipediaSearchJSON?q=" + wikiCityName + "&maxRows=1&username=" + wikiUsername;   //Build the URL
-    fetch(wikiApiURL)
-      .then(function (response) {
-        if (response.status < 200 || response.status >= 400) {                  //Check Status - if not in 300 range, return error message.
-          wikiText.textContent = "Response Error Code: " + response.status;     //Todo - See if API returns any status messages, append if provided.
-        }                                                                       //Todo - If no data available, "summary not available" message instead.
-        return response.json();
-      })
-      .then(function (data) {
-        wikiText.textContent = data.geonames[0].summary;                           //If no error, populate text with result.
-      });
-}
-
-getWikiApi(cityName);
-
-cityName.addEventListener ("keydown", function(e) {
-  if (e.code === "Enter") {
-   validate(e);
   }
-});
-
-function validate(e) {
-    var text = e.target.value;
 }
 
+async function searchWikipedia() {
+  const endpoint = "https://gentle-brushlands-07400.herokuapp.com/http://api.geonames.org/wikipediaSearchJSON?maxRows=1&username=arparent&q=" + cityNameURL;
+  const response = await fetch(endpoint);
+  if (!response.ok) {
+    throw Error(response.statusText);
+  }
+  const json = await response.json();
+  console.log(json);
+  cityNameText.textContent = json.geonames[0].title;
+  wikiText.textContent = json.geonames[0].summary + "  ";
+  var wikiLink = document.createElement("a");
+  wikiLink.textContent = json.geonames[0].title + " on Wikipedia👆";
+  wikiLink.setAttribute("href", ("http://" + json.geonames[0].wikipediaUrl));
+  wikiLink.setAttribute("target", "_blank");
+  wikiText.append(wikiLink);
+  return json;
+}
