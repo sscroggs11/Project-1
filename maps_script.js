@@ -79,7 +79,8 @@ function initAutocomplete() {
   document.getElementById("search-button").addEventListener("click",func);
 
   function func() {
-    cityName=document.getElementById("pac-input").value;
+    var namearray= document.getElementById("pac-input").value.split(",");
+    cityName=namearray[0];
     prepCityNameforURL();
     searchWikipedia();
     loadImage();
