@@ -27,60 +27,24 @@ h1 {
     align-items: center;
 }
 #IMGSEA{
-    display: flex;
-    height: 200px;
+    display: inline;
+    height: 80px;
     width: 100%;
-    object-fit: cover;
+    
+
 
 }
 #InputBox{
     display: flex;
-    /* justify-content: end; */
+    justify-content: end;
     border-bottom: 5px lightblue solid;
-    margin:0 auto;
-    display:inline-block;
 }
 
 input{
     width: 230px;
-    height: 28px;
+    height: 80px;
     display: inline-block;
 }
 #search-button{
     width: 100px;
 }
-.parent{
-    width:100%;
- border: 5px black solid;
- height: 500px;
-}
-.leftchild{
-    width:50%;
-    border: 5px black solid;
-    height: 100%;
-}
-.rightchild{
-
-    width:50%;
-    border: 5px black solid;
-    height: 100%;
-    float:right
-}
-
-}
-    
-img #showimage{
-    max-width: auto;
-    max-height: auto;
-    object-fit: cover;
-}
-
-#map{
-    height:500px;
-    width:100%
-}
-@media only screen and (max-width: 600px){
- img #showimage{
-     max-width:500px;
-    }
-  

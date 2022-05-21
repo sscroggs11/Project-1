@@ -40,3 +40,4 @@ async function searchWikipedia() {
   }
   localStorage.setItem("lastCity", json.geonames[0].title); //Update last city
 }
+
