@@ -71,6 +71,7 @@ input{
 img #showimage{
     max-width: auto;
     max-height: auto;
+    object-fit: cover;
 }
 
 #map{
