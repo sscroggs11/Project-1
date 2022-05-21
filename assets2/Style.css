@@ -27,7 +27,7 @@ h1 {
     align-items: center;
 }
 #IMGSEA{
-    display: inline;
+    display: flex;
     height: 200px;
     width: 100%;
     object-fit: cover;
