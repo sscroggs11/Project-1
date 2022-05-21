@@ -71,7 +71,7 @@ img #showimage{
     height:auto;
     max-height: 100%;
     max-width: 100%;
-    object-fit: contain;
+    object-fit: cover;
 }
 
 #map{
