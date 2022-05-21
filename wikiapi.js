@@ -34,5 +34,3 @@ async function searchWikipedia() {
   return json;
 }
 
-prepCityNameforURL();
-searchWikipedia();
