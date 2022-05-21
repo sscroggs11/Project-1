@@ -75,3 +75,28 @@ function initAutocomplete() {
   }
   
   window.initAutocomplete = initAutocomplete;
+
+  document.getElementById("search-button").addEventListener("click",func);
+
+  function func() {
+    cityName=document.getElementById("pac-input").value;
+    prepCityNameforURL();
+    searchWikipedia();
+    loadImage();
+    markers.push(
+      new google.maps.Marker({
+        map,
+        icon,
+        title: place.name,
+        position: place.geometry.location,
+      })
+    ); 
+    }
+
+  
+
+
+  loadImage();
+  console.log(document.getElementById("pac-input").value);
+
+
