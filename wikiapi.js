@@ -4,6 +4,7 @@ var cityName = "";
 var cityNameURL = "";
 var cityNameText = document.getElementById('city-name-text');
 var wikiText = document.getElementById('wiki-text');
+var leftChild = document.getElementById('left-child');
 
 function prepCityNameforURL(){
   cityNameArr = cityName.split(" ");
@@ -31,8 +32,14 @@ async function searchWikipedia() {
   wikiLink.setAttribute("href", ("http://" + json.geonames[0].wikipediaUrl));
   wikiLink.setAttribute("target", "_blank");
   wikiText.append(wikiLink);
+  var lastCity = localStorage.getItem("lastCity");
+  if(lastCity != json.geonames[0].title){
+    var lastCityText = document.createElement("div");
+    lastCityText.textContent = "Last city searched: " + lastCity;
+    leftChild.append(lastCityText);
+  }
+  localStorage.setItem("lastCity", json.geonames[0].title);
+  console.log(localStorage.getItem("lastCity"));
+
   return json;
 }
-
-prepCityNameforURL();
-searchWikipedia();
