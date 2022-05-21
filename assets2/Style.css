@@ -69,7 +69,8 @@ input{
 }
     
 img #showimage{
-    max-width: 100%
+    max-width: auto;
+    max-height: auto;
 }
 
 #map{
