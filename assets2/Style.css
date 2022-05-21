@@ -28,8 +28,9 @@ h1 {
 }
 #IMGSEA{
     display: inline;
-    height: 250px;
-    width: fit-content;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
 
 }
 #InputBox{
@@ -77,7 +78,4 @@ img #showimage{
     height:500px;
     width:100%
 }
-#headPic{
-    width:100%;
-    height:200px;
-}
+
