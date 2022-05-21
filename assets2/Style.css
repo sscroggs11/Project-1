@@ -66,12 +66,20 @@ input{
     float:right
 }
 
+.headerPic{
+     bottom: 0;
+    left: 0;
+    height: 300px;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: 0;
+    width: 100%;
+}
+    
 img #showimage{
-    width:auto;
-    height:auto;
-    max-height: 100%;
-    max-width: 100%;
-    object-fit: cover;
+    max-width: 100%
 }
 
 #map{
