@@ -27,9 +27,12 @@ h1 {
     align-items: center;
 }
 #IMGSEA{
-    display: inline;
-    height: 250px;
-    width: max-content;
+    display: flex;
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+    
+
 }
 #InputBox{
     display: flex;
@@ -41,7 +44,7 @@ h1 {
 
 input{
     width: 230px;
-    height: 80px;
+    height: 28px;
     display: inline-block;
 }
 #search-button{
@@ -58,13 +61,27 @@ input{
     height: 100%;
 }
 .rightchild{
-    width:100%;
+    width:50%;
     border: 5px black solid;
     height: 100%;
+    float:right
 }
-.controls{
 
+img #showimage{
+    width:auto;
+    height:auto;
+    max-height: 500%;
+    max-width: 100%;
+    object-fit: contain;
 }
-#showimage{
-    
+
+#map{
+    height:100%;
+    width:100%
+}
+
+#headPic{
+    width: 100%;
+    height:200px
+
 }
