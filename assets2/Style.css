@@ -66,16 +66,6 @@ input{
     float:right
 }
 
-#cityPic{
-     bottom: 0;
-    left: 0;
-    height: 300px;
-    margin: auto;
-    position: absolute;
-    right: 0;
-    text-align: center;
-    top: 0;
-    width: 100%;
 }
     
 img #showimage{
